@@ -1,5 +1,12 @@
 
-console.log("hi");
+var express = require('express')
+var bodyParser = require('body-parser')
+const path = require('path');
+
+ // Configure the response to return a status code of 200 (meaning everything went OK), and to be an HTML document
+ res.writeHead(301, { "Content-Type": "text/html",
+ "Access-Control-Allow-Control":"*" });
+
 // who should be your salsa dancing buddy --> famous people 
 // list of questions 
 // var questions = {
