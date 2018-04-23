@@ -10,17 +10,10 @@
     var app = express();
 
     var PORT = 3000;
-    
-// data
-var yoda = {
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
-  };
+
 
 // route 
-app.get("/server", function(req, res){
+app.get("/survey", function(req, res){
     res.json("bird");
     res.writeHead(301, { "Content-Type": "text/html",
  "Access-Control-Allow-Control":"*" });
