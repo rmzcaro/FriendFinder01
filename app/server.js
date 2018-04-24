@@ -3,16 +3,22 @@
 var http = require("http");
 var express = require("express")
 var bodyParser = require("body-parser")
-const path = require("path");
+var path = require("path");
 
+// set up express app
+var app = express();
+var PORT = 3000;
 
-// // create server
-// var server = http.createServer(requestHandler);
+// express to handle data parsing
+app.use()
 
-// // server listening 
-// server.listen(3000, function(){
-//     console.log("started listening on port")
-// });
+// create server
+var server = http.createServer(requestHandler);
+
+// server listening 
+server.listen(3000, function(){
+    console.log("started listening on port")
+});
 
 // // handle request pass two arguments req and res
 // function requestHandler(req,res) {
