@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -11,147 +12,47 @@
         crossorigin="anonymous">
 
     <!--link to javascript file -->
-    <script src=""></script>
+    <script src="app/data/friends.js"></script>
 
 </head>
 
 <body>
-    <div class="container">
-        <!-- Content here -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Who would be your ideal salsa partner?</h1>
-                <p class="lead">Answer the questions below.</p>
-            </div>
-        </div>
+        
+<div class="jumbotron">
+  <h1 class="display-4">Friend Finder!</h1>
+  <p class="lead">Answer a few questions .</p>
+  <hr class="my-4">
+  <p>Find who your ideal salsa partner would be!</p>
+  <a class="btn btn-primary btn-lg" href="./survey.html" role="button" onclick="javascript:dostuff();">Learn more</a>
+</div>
+<div id="caroresponse">
 
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">
-                    <strong>ABOUT YOU</strong>
-                </label>
-                <br>
-                <label for="exampleFormControlTextarea1">Name (Required)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-            </div>
+</div>
 
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Upload your picture</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-            </form>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You prefer to spend a majority of time alone that with people</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Generally speaking, you make important decisions carefully or with little thought</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You prefer action movies over romantic</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You feel most confident when you have tackled a tough challenge alone rather than getting recognized for little effort</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You think everyone should be a creator or that some peopel should just be observers</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">It is more difficult to shimmy than to shake</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You prefer taking a long walk in a forest rather than a beach</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">It is more fun to spend time exercising with a ballerina rather than a kick boxer</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You rarely do something out of sheer excitement</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">You prefer trumpets over guitars</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1(Strongly Agree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Disagree)</option>
-                </select>
-            </div>
-
-        </form>
-
-
-    </div>
-
-
-
-    <!-- bootstrap-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+<script>
+    function dostuff(){
+        //http://localhost:3000/server
+        var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://localhost:3000/server');
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        alert('User\'s name is ' + xhr.responseText);
+        document.getElementById('caroresponse').textContent = xhr.responseText;
+    }
+    else {
+        alert('Request failed.  Returned status of ' + xhr.status);
+    }
+};
+xhr.send();
+    }
+</script>
+<!-- bootstrap-->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+
 </body>
+
+</html>
+
+<!-->
