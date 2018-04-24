@@ -1,26 +1,25 @@
-
 // display two routes
-    // 1 - GET ROUTE to /survey which should display the survey page
-    // 2 - DEFAULT ROUTE catch all route that leads to home.html which displays the home page 
+// 1 - GET ROUTE to /survey which should display the survey page
+// 2 - DEFAULT ROUTE catch all route that leads to home.html which displays the home page 
 
-    // Dependencies 
-    var express = require("express");
+// Dependencies 
+var http = require("http");
+var path = require("path");
 
-    // server gets stored in app 
-    var app = express();
-
-    var PORT = 3000;
+module.exports = function(app) {
+    console.log("export worked!")
 
 
-// route 
+// get route to survey html
 app.get("/survey", function(req, res){
-    res.json("bird");
-    res.writeHead(301, { "Content-Type": "text/html",
- "Access-Control-Allow-Control":"*" });
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
 
 
-// Listener
-app.listen(PORT, function(){
-    console.log("App is listening")
+// default
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
 });
+
+}
