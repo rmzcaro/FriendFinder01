@@ -1,4 +1,21 @@
-var friends = [{
+var friends = [
+    {
+        name: "Teresa Choyguha",
+        photo: "tersa.jpg",
+        scores: [
+            "2",
+            "2",
+            "2",
+            "2",
+            "2",
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+
+        ]
+    },{
 
 
         name: "Samantha Bee",
@@ -158,21 +175,5 @@ var friends = [{
         ]
     },
 
-    {
-        name: "Teresa Choyguha",
-        photo: "tersa.jpg",
-        scores: [
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2"
-
-        ]
-    },
+   
 }]
