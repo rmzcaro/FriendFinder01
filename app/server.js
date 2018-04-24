@@ -10,7 +10,9 @@ var app = express();
 var PORT = 3000;
 
 // express to handle data parsing
-app.use()
+app.use(req, res, function(){
+    console.log("hi");
+})
 
 // create server
 var server = http.createServer(requestHandler);
@@ -20,20 +22,20 @@ server.listen(3000, function(){
     console.log("started listening on port")
 });
 
-// // handle request pass two arguments req and res
-// function requestHandler(req,res) {
-//     // res.end("hi all")
+// handle request pass two arguments req and res
+function requestHandler(req,res) {
+    // res.end("hi all")
 
-//     // capture the url the request is made to
-//     var path = req.url;
+    // capture the url the request is made to
+    var path = req.url;
 
-//     // display the appropriate HTML file depending on the URL
-//     switch (path) {
-//         case "/server":
-//         return displayRoot(path,req,res);
-//     }
+    // display the appropriate HTML file depending on the URL
+    switch (path) {
+        case "/htmlRoutes.js":
+        return displayRoot(path,req,res);
+    }
 
-// };
+};
 
 // // run function when user visits website
 // function displayRoot (url, req, res){

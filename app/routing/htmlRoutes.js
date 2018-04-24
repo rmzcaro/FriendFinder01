@@ -3,11 +3,13 @@
 // 2 - DEFAULT ROUTE catch all route that leads to home.html which displays the home page 
 
 // Dependencies 
+var express = require("express");
+var app = express();
 var http = require("http");
 var path = require("path");
 
-module.exports = function(app) {
-    console.log("export worked!")
+// module.exports = function(app) {
+//     console.log("export worked!")
 
 
 // get route to survey html
@@ -15,11 +17,11 @@ app.get("/survey", function(req, res){
     res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
 
-
 // default
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-}
+app.listen(3000);
+console.log("running port 3000");
