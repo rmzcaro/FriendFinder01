@@ -1,6 +1,6 @@
 // need to edit friend scores to objects
 
-var friends = [
+var friendsArr= [
     {
         "name": "Teresa Choyguha",
         "photo": "https://fnx.org/comedy/wp-content/uploads/2017/12/IMG_4675.jpg",
@@ -177,3 +177,6 @@ var friends = [
         ]
     }
 ]
+
+// make array accessible
+module.exports = friendsArr;

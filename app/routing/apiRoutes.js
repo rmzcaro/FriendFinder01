@@ -19,7 +19,9 @@ module.exports = function(app) {
 
     // 
 
-  
+  // once the user has submitted we are using the object 
+  // newFriend 
+//   app.post("/api/friends", newFriend)
     // 
 
     // API post methods -- the below code handles when a user submits a form 

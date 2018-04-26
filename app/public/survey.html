@@ -158,6 +158,24 @@
 
         </div>
 
+        <script type ="text/javascript">
+        // on submit we're creating an object with the data 
+        $("#submit").on("click", function(event){
+            event.preventDefault();
+            var newFriend = {
+                name: $("#Name").val().trim()
+                // questOne: $("#q1").val().trim()
+            };
+            // console.log(newFriend);
+
+            $.post("/api/friends", newFriend)
+            // if data then data = true
+            .then(function(data){
+                console.log("add.html" , data);
+                alert("adding new friend!")
+            });
+        })
+        </script>
 
 
         <!-- bootstrap-->
