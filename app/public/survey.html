@@ -164,8 +164,9 @@
         $("#submit").on("click", function(event){
             event.preventDefault();
             var newFriend = {
-                name: $("#Name").val().trim()            };
-            // console.log(newFriend);
+                name: $("#Name").val().trim()   
+            };
+            console.log(newFriend);
 
             $.post("/api/friends", newFriend)
             // if data then data = true
