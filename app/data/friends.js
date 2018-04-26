@@ -1,9 +1,9 @@
 // need to edit friend scores to objects
 
-var friends = 
+var friends = [
     {
         "name": "Teresa Choyguha",
-        "photo": "tersa.jpg",
+        "photo": "https://fnx.org/comedy/wp-content/uploads/2017/12/IMG_4675.jpg",
         "scores": [
             2,
             2,
@@ -176,3 +176,4 @@ var friends =
 
         ]
     }
+]

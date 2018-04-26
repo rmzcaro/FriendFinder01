@@ -8,12 +8,13 @@ var app = express();
 var http = require("http");
 var path = require("path");
 
-// module.exports = function(app) {
-//     console.log("export worked!")
+module.exports = function(app) {
+    console.log("export worked!")
 
 
 // get route to survey html
 app.get("/survey", function(req, res){
+    console.log("currently at tables route");
     res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
 
@@ -23,5 +24,4 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-app.listen(3000);
-console.log("running port 3000");
+};
