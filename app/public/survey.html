@@ -37,6 +37,7 @@
                 <textarea class="form-control" id="Name" rows="1"></textarea>
             </div>
 
+
             <div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Upload your picture</label>
@@ -163,9 +164,7 @@
         $("#submit").on("click", function(event){
             event.preventDefault();
             var newFriend = {
-                name: $("#Name").val().trim()
-                // questOne: $("#q1").val().trim()
-            };
+                name: $("#Name").val().trim()            };
             // console.log(newFriend);
 
             $.post("/api/friends", newFriend)

@@ -14,26 +14,33 @@ module.exports = function(app) {
     // get route to api/friends
     app.get("/api/friends", function (req, res) {
         res.json(friendsList);
-        //  console.log(friendsList);
+         console.log(friendsList);
     });
 
     // 
 
   // once the user has submitted we are using the object 
-  // newFriend 
-//   app.post("/api/friends", newFriend)
+
+
     // 
 
     // API post methods -- the below code handles when a user submits a form 
-    // data (ie a JSON object ) this is pushed to a JS array
-    app.post("/api/friends", function (req, res) {
-        if (friendsList.length > 5) {
-            // add the json the user send to the character array
-            // friends.push(req.body);
-            //display JSON to users
+    // data (ie a JSON object ). It creates a new user, this is pushed to a JS array
+    app.post("/api/friends", function(req, res) {
+        // req.body is equal to the JSON post sent from the user
+        // This works because of our body-parser middleware
+        var newUser = req.body;
+
+        // removes spaces from pattern
+
+        newUser = newUser.name.replace(/\s+/g, "").toLowerCase(); 
+        
+        console.log(newUser);
+
+        friendsList.push(newUser);
+        
             res.json(true);
 
-        }
     });
 
 }
