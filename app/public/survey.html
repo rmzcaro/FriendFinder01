@@ -20,6 +20,7 @@
 <body>
     <div class="container">
         <!-- Content here -->
+        <!-- pending: validate data using https://www.npmjs.com/package/express-validator -->
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Find out who is your ideal salsa partner!</h1>
@@ -47,6 +48,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You prefer to spend a majority of time alone that with people</label>
                 <select class="form-control" id="q1">
+                    <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -57,6 +59,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Generally speaking, you make important decisions carefully or with little thought</label>
                 <select class="form-control" id="q2">
+                    <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -67,6 +70,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You prefer action movies over romantic</label>
                 <select class="form-control" id="q3">
+                    <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -78,6 +82,8 @@
                 <label for="exampleFormControlSelect1">You feel most confident when you have tackled a tough challenge alone rather than getting recognized for
                     little effort</label>
                 <select class="form-control" id="q4">
+                    <option value="" selected disabled>Select an answer</option>
+
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -88,6 +94,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You think everyone should be a creator or that some people should just be observers</label>
                 <select class="form-control" id="q5">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -99,6 +106,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">It is more difficult to shimmy than to shake</label>
                 <select class="form-control" id="q6">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -109,6 +117,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You prefer taking a long walk in a forest rather than a beach</label>
                 <select class="form-control" id="q7">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -119,6 +128,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">It is more fun to spend time exercising with a ballerina rather than a kick boxer</label>
                 <select class="form-control" id="q8">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -129,6 +139,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You rarely do something out of sheer excitement</label>
                 <select class="form-control" id="q9">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -139,6 +150,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">You prefer trumpets over guitars</label>
                 <select class="form-control" id="q10">
+                        <option value="" selected disabled>Select an answer</option>
                     <option>1(Strongly Agree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -159,22 +171,37 @@
 
         </div>
 
-        <script type ="text/javascript">
-        // on submit we're creating an object with the data 
-        $("#submit").on("click", function(event){
-            event.preventDefault();
-            var newFriend = {
-                name: $("#Name").val().trim()   
-            };
-            console.log(newFriend);
+        <script type="text/javascript">
+            // on submit we're creating an object with the data 
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+                var newFriend = {
+                    name: $("#Name").val().trim(),
+                    pic: $("#Picture").val().trim(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
+                console.log(newFriend);
+                console.log(newFriend.scores);
 
-            $.post("/api/friends", newFriend)
-            // if data then data = true
-            .then(function(data){
-                console.log("add.html" , data);
-                alert("adding new friend!")
-            });
-        })
+
+                $.post("/api/friends", newFriend)
+                    // if data then data = true
+                    .then(function (data) {
+                        console.log("add.html", data);
+                        alert("adding new friend!")
+                    });
+            })
         </script>
 
 
@@ -183,4 +210,5 @@
             crossorigin="anonymous"></script>
 
 </body>
+
 </html>
